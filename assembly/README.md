@@ -1,4 +1,4 @@
-# Notes on Assembly
+# Assembly Language
 
 My personal notes about the Assembly Programming Language.
 
