@@ -1,6 +1,8 @@
 # Eduardo Furlan's Notes
 
-My random personal notes that I collect over time, on the most varied subjects, such as design and implementation of language, theory, internals, high performance processing, computer architecture, machine learning, programming, books, links, tips and tricks, curiosities and others.
+*Last edited: 2024-12-24*
+
+My random personal notes that I collect over time, on the most varied subjects, such as design and implementation of language, theory, internals, computer architecture, machine learning, high performance processing, programming, cluster, containers, books, links, tips and tricks, curiosities and others.
 
 <table>
     <tr>
@@ -10,13 +12,40 @@ My random personal notes that I collect over time, on the most varied subjects, 
 </table>
 
 
-## Selected topics
+## Some directories
 
+(unsorted)
+
+* [HPC](https://github.com/efurlanm/hpc) - repository containing my personal notes on High-Performance Computing (HPC). Efficient language design and implementation are crucial for HPC because they directly impact the performance, scalability, and usability of HPC applications. Languages designed specifically for HPC, such as domain-specific languages (DSLs), can optimize parallelism, manage complex computations, and provide abstractions that simplify the development of high-performance code. Additionally, well-designed compilers and interpreters for these languages can further enhance performance by optimizing code execution on HPC systems.
+* [cluster](cluster) - my personal home cluster.
+* [papi](papi) - portable performance counter library and related infos.
+* [SDumont](SDumont) - subdirectory containing notes about the [Santos Dumont supercomputer](https://sdumont.lncc.br/machine.php).
+* [IDRIS](IDRIS) - MPI course with many examples in F90. From Institut du Développement et des Ressources en Informatique Scientifique (IDRIS): http://www.idris.fr/formations/mpi/
 * [Python](python/README.md) - my personal notes on Python-related topics that I find interesting.
 * [Moving Forth](moving_forth/README.md) - my personal notes on Brad Rodriguez's Moving Forth.
 * [Fortran](fortran/README.md) - page with my personal notes about Fortran, a high -level programming language that is historically linked to HPC due to its efficient handling of numerical and scientific calculations. Its syntax and resources are optimized for high performance, making it ideal for large-scale simulations and mathematical models in scientific research. Consequently, Fortran remains a basic item in the HPC community for his incomparable computational efficiency.
-* [C](c/README.md) - page with my Personal Notes on C Language, which has efficiency and ability to directly manipulate hardware resources, allowing optimized performance for intensive computing tasks. Its low-level operations and portability make it a favorite language for the development of high-speed scalable HPC applications.
-* [HPC](https://github.com/efurlanm/hpc) - repository containing my personal notes on High-Performance Computing (HPC). Efficient language design and implementation are crucial for HPC because they directly impact the performance, scalability, and usability of HPC applications. Languages designed specifically for HPC, such as domain-specific languages (DSLs), can optimize parallelism, manage complex computations, and provide abstractions that simplify the development of high-performance code. Additionally, well-designed compilers and interpreters for these languages can further enhance performance by optimizing code execution on HPC systems.
+* [C](c/README.md) - directory with my personal notes on the C programming language, which has efficiency and the ability to directly manipulate hardware resources, allowing optimized performance for compute-intensive tasks. Its low-level operations and portability make it one of the favorite languages ​​for developing high-speed, scalable HPC applications.
+* [Assembly](assembly/README.md) - directory with my personal notes on the Assembly programming language.
+
+
+## Directories mirrored from ftp://ftp.liv.ac.uk/pub/
+
+* http://github.com/efurlanm/f90/blob/master/F90Course
+* http://github.com/efurlanm/f90/blob/master/HPFCourse
+* http://github.com/efurlanm/f90/blob/master/HPFFMatter
+* http://github.com/efurlanm/f90/blob/master/HTMLHPFCourse
+
+The above directory listing can also be found at
+
+* http://web.archive.org/web/20170706012641/ftp://ftp.liv.ac.uk/pub/F90Course
+* http://web.archive.org/web/20170706012641/ftp://ftp.liv.ac.uk/pub/HPFCourse
+* http://web.archive.org/web/20170706012641/ftp://ftp.liv.ac.uk/pub/HPFFMatter
+
+("HTMLHPFCourse" is the content of the compressed file HTMLHPFCourse.tar.gz)
+
+
+## Selected topics
+
 * [Compilers course](https://github.com/efurlanm/teaching/tree/main/comp) (in Portuguese) - lecture notes from the course I teach.
 
 
@@ -57,9 +86,11 @@ Vintage computer internals, or "computer archeology". The first personal compute
 * [Threaded code](https://en.wikipedia.org/wiki/Threaded_code) - programming technique where the code consists primarily of subroutine calls. It is often used in compilers and interpreters to improve code density and execution efficiency, especially in systems with limited memory. The technique is known for its use in languages like Forth and early versions of BASIC.
 
 
+## Links of interest
+
+* RODRIGUES, E. R. [Dynamic Load-balancing](https://www.lume.ufrgs.br/bitstream/handle/10183/34776/000792718.pdf): A New Strategyfor Weather Forecast Models - the thesis includes approaches such as compiler, processor, Thread, TLS, GDT, LDT, PAPI, Assembly, etc.
+
+
 ## License
 
 My work follows the CC-BY-4.0 license. The works of other authors follow their licenses.
-
-
-<br><small>Last edited: 2024-12-14</small>
