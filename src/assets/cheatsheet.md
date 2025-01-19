@@ -303,9 +303,9 @@ This is [an example](http://example.com/ "Title") inline link.
 
 If you’re referring to a local resource on the same server, you can use relative paths:
 
-    See my [About](assets/cheatsheet.md) page for details.   
+    See my [About](cheatsheet.md) page for details.   
 
-See my [About](assets/cheatsheet.md) page for details.   
+See my [About](cheatsheet.md) page for details.   
 
 Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:
 
