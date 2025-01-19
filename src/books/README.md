@@ -1,0 +1,32 @@
+# Books
+
+Selected books, ebooks, wikibooks, papers, publications, and related topics that I collect over time. Includes some documents that I have edited.
+
+* Setzer, V. W. (1988). *Sistema simples para documentação semi-automática de programas*. <https://repositorio.usp.br/item/000781431> (in Portuguese) (this article is publicly available) [[PDF version](autodoc/autodoc.pdf)] [[HTML version](autodoc/autodoc.md)]
+* Setzer, V. W., & Melo, I. S. H. de. (1989). *A Construção de Um Compilador*. <https://www.ime.usp.br/~vwsetzer> (in Portuguese) [[Notes](bcomp/bcomp.md)] [[PDF](bcomp/A_Construcao_de_um_Compilador_(r1.3)-Setzer.pdf) r1.3]. Revision history:
+    * r1.3 - the Initial View Navigation Tab has been changed from Page Only to Bookmarks Panel
+    * r1.2 - added Bookmarks
+    * r1.1 - OCRed
+    * r1.0 - original document scanned
+* [Threaded Interpretive Languages: Their Design and Implementation](https://vdoc.pub/documents/threaded-interpretive-languages-their-design-and-implementation-1seph9gct7uo), by RG Loeliger - explores the principles and architecture of [threaded interpretive languages](https://en.wikipedia.org/wiki/Threaded_code), with a specific focus on Forth-like languages. 
+* [Threaded code designs for Forth interpreters](https://dl.acm.org/doi/10.1145/146559.146561), by PJ Hong - techniques for implementing threaded code in Forth interpreters.
+* [Library](https://vdoc.pub/search/compiler) with several books on compilers, computers, and programming.
+
+
+## Wikibooks
+
+* [Compiler](https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Tools/Compiler) - from the book *Introduction to Software Engineering*. Overview of compilers, explaining how they transform source code written in a high-level programming language into machine code or another lower-level language.
+* [Compiler Construction](https://en.wikibooks.org/wiki/Compiler_Construction) - provides a detailed guide on the theory and practice of compiler construction, including lexical analysis, parsing, semantic analysis, optimization, and code generation.
+
+
+## Revision numbers
+
+The documents I edit have revision numbers in the filename, to facilitate identification and handling. The numbering rules are based on [[Scriptorium (2018)](https://www.epublibre.org/libro/detalle/2398)].
+
+* The revision number is always changed when any change is made to the document, including its name.
+* The initial revision number when creating the document for the first time will be `r1.0` .
+* The following numbers will be renamed by increasing one decimal place (r1.1, r1.2, r1.3, ...).
+* When r1.9 is reached, the next number will be r2.0.
+* In case of a radical change (addition of illustrations, notes and similar situations), it is allowed to jump directly to the next
+integer number (e.g.: from r1.4 to r2.0).
+* In cases where the content of the document does not change, but is only compacted, or some other external change, the number will have an "a" added to the end: r1.0a, r1.1a, ...

@@ -1,0 +1,44 @@
+# Last edited: 2025-01-14
+# Site Generator: https://squidfunk.github.io/mkdocs-material/
+site_name: Home
+site_description: My random personal notes
+site_author: Eduardo Furlan
+site_url: https://efurlanm.github.io/home/
+copyright: CC BY 4.0 License
+repo_name: home
+repo_url: http://github.com/efurlanm/home/
+site_dir: docs
+docs_dir: src
+use_directory_urls: false
+theme:
+    name: material
+    # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    palette:
+        primary: orange
+        accent: orange
+    font: false                 # no external fonts
+    features:
+        - header.autohide
+        - navigation.tracking   # address shows active anchor
+plugins:
+    - search
+    - blog:
+        post_readtime: false
+extra_css:
+    - assets/extra.css
+    - assets/katex/katex.min.css
+    #- https://unpkg.com/katex/dist/katex.min.css
+extra_javascript:
+    # squidfunk.github.io/mkdocs-material/reference/math/
+    - assets/katex.js
+    - assets/katex/katex.min.js
+    - assets/katex/contrib/auto-render.min.js
+    #- https://unpkg.com/katex/dist/katex.min.js
+    #- https://unpkg.com/katex/dist/contrib/auto-render.min.js    
+markdown_extensions:
+    - tables
+    - pymdownx.arithmatex:
+        generic: true           # used with katex
+exclude_docs: |
+    .*
+    _*

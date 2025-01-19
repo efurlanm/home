@@ -1,0 +1,152 @@
+/* ### JUPYTER ### */
+.jupyter-wrapper .jp-RenderedText {
+    --jp-code-font-size: .875em;
+}
+.md-typeset h1:not([class]) {
+    margin-top: calc(var(--jp-content-heading-margin-top));
+    margin-bottom: calc(var(--jp-content-heading-margin-bottom));
+}
+.jp-RenderedHTMLCommon h1 {
+    margin: var(--jp-content-heading-margin-top) 0 var(--jp-content-heading-margin-bottom) 0;
+}
+
+
+/* ### TABLE ### */
+.md-typeset table:not([class]) {
+    font-size: .875em;
+    line-height: 1;
+    border: none;
+    border-collapse: collapse;
+}
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+    border: 1px solid var(--md-typeset-table-color);
+    vertical-align: middle;
+}
+.md-typeset table:not([class]) th {
+    background-color: #f8f8f8;
+}
+
+
+/* ### PARAGRAPH ### */
+.md-typeset p:not([class]) {
+/*    hyphens: auto;
+    text-align: justify;*/
+}
+
+
+/* ### CODE ### */
+.md-typeset code:not([class]) {
+    font-size: .875em;
+}
+
+
+/* ### FIGCAPTION ### */
+.md-typeset figcaption:not([class]) {
+    font-size: .875em;
+    font-style: normal;
+/*    hyphens: auto;
+    text-align: justify;*/
+    text-color: dimgray;
+}
+
+
+/* ### LIST ### */
+.md-typeset ol.references {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+}
+.md-typeset li.references {
+  display: block;
+}
+.md-typeset li.references::before {
+  display: inline-block;
+  content: "[" counter(item) "] ";
+  counter-increment: item;
+  width: 1.75em;
+  margin-left: -2em;
+}
+
+
+/* Styles for lists WITHIN .md-typeset */
+.md-typeset ul li > ul {
+    margin-bottom: 0; /* Set bottom margin of ul to 0 */
+}
+
+.md-typeset ul li > * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.md-typeset ul li,
+.md-typeset ol li {
+    padding-top: 0rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+/* Remove vertical spacing for li's WITHOUT paragraphs */
+.md-typeset li:not(:has(p)) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Styles for NESTED lists WITHIN .md-typeset */
+.md-typeset ul ul,
+.md-typeset ol ol,
+.md-typeset ul ol,
+.md-typeset ol ul {
+    margin-bottom: 0; /* Remove bottom margin for nested lists as well */
+}
+
+.md-typeset ul ul li,
+.md-typeset ol ol li,
+.md-typeset ul ol li,
+.md-typeset ol ul li {
+    padding-top: 0rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Spacing for paragraphs INSIDE list items of NESTED lists */
+.md-typeset ul ul li > p,
+.md-typeset ol ol li > p,
+.md-typeset ul ol li > p,
+.md-typeset ol ul li > p {
+    margin-bottom: 0.5rem;
+}
+
+/* Remove vertical spacing for li WITHOUT paragraphs in NESTED lists */
+.md-typeset ul ul li:not(:has(p)),
+.md-typeset ol ol li:not(:has(p)),
+.md-typeset ul ol li:not(:has(p)),
+.md-typeset ol ul li:not(:has(p)){
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+/*--- External links --------------------*/
+
+/* ::after creates a pseudo-element used to add cosmetic content.
+ *   See: https://developer.mozilla.org/en-US/docs/Web/CSS/::after . */
+
+.md-typeset a[href*="//"]:after
+{
+    font-size: 0.75em;
+    font-weight: 300;  /* light */
+    color: var(#121212);
+    opacity: 0.5;
+    content: "↗"; /* top right arrow: ↗ \2197 */
+}
+
+.md-typeset a[href*="//"]:hover:after
+{
+    color: var(#2749c9);
+    opacity: 1;
+}
+
+
+
