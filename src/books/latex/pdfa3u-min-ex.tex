@@ -5,19 +5,12 @@
 \begin{filecontents*}{\jobname.xmpdata}
   \Title{*Default PDF Document Title (For PDF/A Compatibility)*}
   \Author{*Author Name*}
-  \Language{*English*}
+  \Language{English}
 \end{filecontents*}
 % PDF/A-3 is based on PDF 1.7
 \directlua{
-  if pdf.getminorversion() \string~= 7 then
-    if (status.pdf_gone and status.pdf_gone > 0)
-    or (status.pdf_ptr and status.pdf_ptr > 0) then
-      tex.error("PDF version cannot be changed anymore")
-    else
-      pdf.setmajorversion(1) % Set the major version to 1
-      pdf.setminorversion(7) % Set the minor version to 7
-    end
-  end
+  pdf.setmajorversion(1) % Set the major version to 1
+  pdf.setminorversion(7) % Set the minor version to 7
 }
 
 % main
@@ -39,6 +32,12 @@
 \hypersetup{colorlinks=true,allcolors=blue} % Appearance of hyperlinks
 
 \begin{document}
+ABCDEFGHIJKLMNOPQRSTUVXWYZ abcdefghijklmnopqrstuvxwyz 123456890
+
+O0|lI1ΓvνφγΦɸδεθλΣΩΔ≤≥∞†‡£€⊢℘𝒫 ◊▷≠ℕ∈∉∀∃⊂⊆≪
+
+Lorem ipsum dolor sit amet
+
 $X_{\sum_i a_i}$
 $$x_2$$
 $$1_x^2$$

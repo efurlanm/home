@@ -35,3 +35,6 @@ integer number (e.g.: from r1.4 to r2.0).
 ## LaTeX
 
 * Example of how to generate [PDF/A-3u](https://en.wikipedia.org/wiki/PDF/A) using LaTeX and LuaTeX. [[.tex](latex/pdfa3u-min-ex.tex)] [[.pdf](latex/pdfa3u-min-ex.pdf)]
+    * Passes validation test: <https://xodo.com/validate-pdfa> and <https://demo.verapdf.org/>
+* Example of how to generate [PDF 2.0](https://en.wikipedia.org/wiki/PDF) using LaTeX and LuaTeX. [[.tex](latex/pdf2.0-min-ex.tex)] [[.pdf](latex/pdf2.0-min-ex.pdf)]
+    * Passes validation test: <https://www.pdf-online.com/osa/validate.aspx>
