@@ -70,19 +70,19 @@
 
 
 /* Styles for lists WITHIN .md-typeset */
-.md-typeset ul li > ul {
+/*.md-typeset ul li > ul {
     margin-bottom: 0; /* Set bottom margin of ul to 0 */
-}
+}*/
 
-.md-typeset ul li > * {
+/*.md-typeset ul li > * {
     margin-top: 0;
     margin-bottom: 0;
-}
+}*/
 
 .md-typeset ul li,
 .md-typeset ol li {
     padding-top: 0rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.5em;
     margin-top: 0;
 }
 
@@ -106,7 +106,7 @@
 .md-typeset ul ol li,
 .md-typeset ol ul li {
     padding-top: 0rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.25em;
 }
 
 /* Spacing for paragraphs INSIDE list items of NESTED lists */
@@ -114,7 +114,7 @@
 .md-typeset ol ol li > p,
 .md-typeset ul ol li > p,
 .md-typeset ol ul li > p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25em;
 }
 
 /* Remove vertical spacing for li WITHOUT paragraphs in NESTED lists */
