@@ -120,4 +120,10 @@ For debugging and optimization purposes it is important to know the "assembly" l
 - [My version of PARF](<https://github.com/efurlanm/ml/tree/main/parf>) (Parallel Random Forest) algorithm, MPI-enabled, compiled with Intel Fortran 2021.2 .
 
 
+## Random bookmarks
+
+- Post on Hacker News: [use modern code/tools for glue, keep your climate models in FORTRAN](https://news.ycombinator.com/item?id=23847527).
+- Blog: [Implicit None](https://web.archive.org/web/20160109190730/http://implicitnone.com/) - Ideas, suggestions, code hints & tips for Fortran enthusiasts.
+
+
 <br><sub>Last edited: 2025-01-16</sub>
