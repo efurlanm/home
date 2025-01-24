@@ -4,7 +4,7 @@ This repository: <https://github.com/efurlanm/home/>
 Automatic generated website: <https://efurlanm.github.io/home/>    
 List of repositories on Github: <https://github.com/efurlanm?tab=repositories>
 
-Welcome to my random personal notes that I collect over time, on the most varied subjects, such as design and implementation of languages, theory, internals, computer architecture, machine learning, high performance processing, programming, cluster, containers, books, links, tips and tricks, curiosities and others.
+Welcome to my random personal notes that I collect over time, on the most varied subjects, such as design and implementation of languages, theory, internals, computer architecture, machine learning, high performance processing, programming, cluster, containers, books, links, tips and tricks, curiosities and others. The intention of my notes is not to be as accurate as possible, nor is it to be comprehensive.
 
 The website is generated from plain text formatting files called [Markdown](https://github.github.com/gfm/) available in the directories. The static site generator [MkDocs](https://www.mkdocs.org/) is a tool used to convert these Markdown files into the web pages you see. Some of the Markdown files are described in the text, while others appear only as menu items. For Jupyter Notebook files, Markdown files are automatically generated and also appear in the menu. It is important to note that there are many other files in the repository that do not appear on the website itself. To see them all, you can browse the repository directly.
 
@@ -35,9 +35,9 @@ The website is generated from plain text formatting files called [Markdown](http
 * [Courses](learning/courses.md) - list of courses I took at INPE.
 
 
-## Files mirrored from ftp://ftp.liv.ac.uk/pub/
+## F90 from University of Liverpool
 
-Some mirrored files from the University of Liverpool on Fortran 90 and High Performance Computing.
+Some files mirrored files from the University of Liverpool (<ftp://ftp.liv.ac.uk/pub/>) on Fortran 90 and High Performance Computing.
 
 * Archived webpage: <https://web.archive.org/web/20130120030653/http://www.liv.ac.uk/HPC/HPCpage.html>
 
@@ -78,4 +78,4 @@ Original archived files:
 My work follows the CC-BY-4.0 license. The works of other authors follow their licenses.
 
 
-<br><sub>Last edited: 2025-01-18</sub>
+<br><sub>Last edited: 2025-01-24</sub>
