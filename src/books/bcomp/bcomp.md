@@ -5,7 +5,7 @@ My personal notes on the book "A Construção de um Compilador" by Setzer&Melo (
 
 ## Parser extension
 
-* PINTO, T. T. S. GGLL: a parser generator for LL(1) graphical grammars. 2014. University of Sao Paulo, 2014. DOI 10.11606/D.45.2014.tde-23012015-075452. Available at: <http://www.teses.usp.br/teses/disponiveis/45/45134/tde-23012015-075452/>.
+* Pinto, T. T. S. (2014). *GGLL: a parser generator for LL(1) graphical grammars*. University of Sao Paulo. DOI 10.11606/D.45.2014.tde-23012015-075452. <http://www.teses.usp.br/teses/disponiveis/45/45134/tde-23012015-075452/>
 
 Abstract: This work focuses on the development of a top-down parser generator for LL(1) grammars with graphical input of the grammar, as well as a comparison of this generator with other generators in use in the market. As a result, a fully functional generator was obtained, and it was shown how it is superior to other parsers. Implementation details are described and a user manual for the system implemented in Java, independent of programming environments, was prepared.
 
@@ -14,6 +14,15 @@ Sources:
 * <https://github.com/tassotirap/GGLL.UI>
 * <https://github.com/tassotirap/GGLL.Core>
 
+
+## Revision history
+
+* r1.2b - optimization and conversion to PDF/A-2B using: $ ocrmypdf --skip-text --tesseract-timeout=0 --jbig2-lossy --optimize=3 in.pdf out.pdf
+* r1.2a - the Initial View Navigation Tab has been changed from Page Only to Bookmarks Panel
+* r1.2 - added Bookmarks
+* r1.1 - OCRed
+* r1.0 - original document scanned
+  
 
 ## References
 
