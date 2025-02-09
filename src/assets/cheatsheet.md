@@ -681,3 +681,6 @@ The homomorphism $f$ is injective if and only if its kernel is only the singleto
 
 Other extensions: <https://www.mkdocs.org/user-guide/writing-your-docs/>
  
+
+
+<br><sub>Last edited: 2025-01-19 15:18:10</sub>

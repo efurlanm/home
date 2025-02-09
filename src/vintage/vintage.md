@@ -9,3 +9,6 @@ Vintage computer internals, or "computer archeology". The first personal compute
 * Spectrum ROM Disassemblies [[1](https://github.com/ZXSpectrumVault/rom-disassemblies)]
 * Altair BASIC Annotated Disassembly [[1](http://altairbasic.org)]
 
+
+
+<br><sub>Last edited: 2025-01-15 14:41:53</sub>

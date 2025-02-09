@@ -41,4 +41,4 @@ Some seminars that I participated as part of the course at INPE
 * Silva, N. (2022). Veículos Aéreos Não Tripulados e sua autonomia de operação [Seminar]. https://youtu.be/yVIrjVQvVUo
 
 
-<br><sub>Last edited: 2024-12-25</sub>
+<br><sub>Last edited: 2025-02-09 12:04:44</sub>

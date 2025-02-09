@@ -73,9 +73,14 @@ Original archived files:
 * [Threaded code](https://en.wikipedia.org/wiki/Threaded_code) - programming technique where the code consists primarily of subroutine calls. 
 
 
+## My self-hosted webserver
+
+* [My self-hosted website](http://off.dynu.net:8008) - I maintain my own server, where I host and manage applications, rather than relying on SaaS providers. This setup includes a router running OpenWrt, which I use extensively for testing and learning. Working with constrained systems in general has given me insights into developing and refining various performance optimization techniques, such as efficient resource allocation, lightweight software solutions, and simplified configurations. These practices, honed in constrained environments, not only maximize the potential of smaller systems, but also provide valuable insights and strategies that can be effectively applied to larger, more complex infrastructures.
+
+
 ## License
 
 My work follows the CC-BY-4.0 license. The works of other authors follow their licenses.
 
 
-<br><sub>Last edited: 2025-01-24</sub>
+<br><sub>Last edited: 2025-02-06 10:53:11</sub>

@@ -366,3 +366,6 @@ pi is approximately 3.1415927369231262, error is 0.0000000833333331
 * https://www.linuxwave.info/2019/10/installing-slurm-workload-manager-job.html
 * https://slurm.schedmd.com/
 
+
+
+<br><sub>Last edited: 2019-11-18 11:28:00</sub>

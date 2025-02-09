@@ -502,3 +502,6 @@ Version                  = 17.11.2
 * https://www.linuxwave.info/2019/10/installing-slurm-workload-manager-job.html
 * https://slurm.schedmd.com/
 * https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/parallel_distributed/2016/html/fix_broken_slurm.html
+
+
+<br><sub>Last edited: 2020-03-02 16:31:24</sub>
