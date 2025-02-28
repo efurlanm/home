@@ -41,3 +41,4 @@ markdown_extensions:
 exclude_docs: |
     .*
     _*
+    assets/cheatsheet.md

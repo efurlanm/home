@@ -1,6 +1,6 @@
 ---
 draft: false
-date: 2024-02-06
+date: 2025-02-28
 categories:
   - Publication
 tags:
@@ -11,7 +11,7 @@ tags:
 
 I did a quick search on the CAPES website:
 
-<https://www-periodicos-capes-gov-br.ezl.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html>
+<https://www.periodicos.capes.gov.br/index.php/acervo/lista-a-z-periodicos.html>
 
 <!-- more -->
 
@@ -52,9 +52,11 @@ Searching for open, peer-reviewed, national, multidisciplinary journals, and I s
     - Quarterly
   
 - Revista Brasileira de Computação Aplicada [2176-6649] B3
+    - <https://seer.upf.br/index.php/rbca/index>
     - University of Passo Fundo (UPF)
     - Quarterly
 
 - Revista de Informática Teórica e Aplicada [0103-4308] B3
+    - <https://seer.ufrgs.br/index.php/rita/index>
     - Federal University of Rio Grande do Sul (UFRGS)
     - Semiannual
