@@ -158,50 +158,66 @@ List items may consist of multiple paragraphs. Each subsequent paragraph in a li
 
 ---
 
-    * Lorem ipsum
-        * Lorem ipsum
-            * Lorem ipsum
-        * Lorem ipsum
-            * Lorem ipsum
-                * Lorem ipsum
-    * Lorem ipsum
-        * Lorem ipsum
-            * Lorem ipsum
-            * Lorem ipsum
-            * Lorem ipsum
+    * Lorem01
+        * Lorem02
+            * Lorem03
+        * Lorem04
+            * Lorem05
+                * Lorem06
+    * Lorem07
+        * Lorem08
+            * Lorem09
+            * Lorem10
+            * Lorem11
 
-    * Lorem ipsum
 
-        * Lorem ipsum
-        
-            * Lorem ipsum
+    <!-- BUG: there must be at least one comment separating lists -->
+
+
+    * Lorem12
+    * Lorem13
+    * Lorem14
+        * Lorem15
+        * Lorem16
+        * Lorem17
+            * Lorem18
+            * Lorem19
+            * Lorem20
             
-            * Lorem ipsum
+            * Lorem21
             
-            * Lorem ipsum
+            * Lorem22
 
 
-* Lorem ipsum
-    * Lorem ipsum
-        * Lorem ipsum
-    * Lorem ipsum
-        * Lorem ipsum
-            * Lorem ipsum
-* Lorem ipsum
-    * Lorem ipsum
-        * Lorem ipsum
-        * Lorem ipsum
-        * Lorem ipsum
+* Lorem01
+    * Lorem02
+        * Lorem03
+    * Lorem04
+        * Lorem05
+            * Lorem06
+* Lorem07
+    * Lorem08
+        * Lorem09
+        * Lorem10
+        * Lorem11
 
-* Lorem ipsum
 
-    * Lorem ipsum
-    
-        * Lorem ipsum
+<!-- BUG: there must be at least one comment separating lists -->
+
+
+* Lorem12
+* Lorem13
+* Lorem14
+    * Lorem15
+    * Lorem16
+    * Lorem17
+        * Lorem18
+        * Lorem19
+        * Lorem20
         
-        * Lorem ipsum
+        * Lorem21
         
-        * Lorem ipsum
+        * Lorem22
 
 ---
 
@@ -683,4 +699,4 @@ Other extensions: <https://www.mkdocs.org/user-guide/writing-your-docs/>
  
 
 
-<br><sub>Last edited: 2025-01-19 15:18:10</sub>
+<br><sub>Last edited: 2025-03-09 12:59:54</sub>

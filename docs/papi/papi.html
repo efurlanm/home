@@ -1,0 +1,3682 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="My random personal notes">
+      
+      
+        <meta name="author" content="Eduardo Furlan">
+      
+      
+        <link rel="canonical" href="https://efurlanm.github.io/home/papi/papi.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="../python/index.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>My personal notes on PAPI and hardware - Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+      <link rel="stylesheet" href="../assets/katex/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#my-personal-notes-on-papi-and-hardware" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Home" class="md-header__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              My personal notes on PAPI and hardware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="http://github.com/efurlanm/home/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Home" class="md-nav__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Home
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="http://github.com/efurlanm/home/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Personal Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Moving Forth
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Moving Forth
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/8051task.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MULTITASKING 8051 CAMELFORTH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/camel09.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camel09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/camel80.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camel80
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/camel80d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camel80d
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/camel80h.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camel80h
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/cameltst.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cameltst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/glosslo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glosslo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving3.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving5.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving6.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/moving8.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOVING FORTH 8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_17">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/About/editor%27s%20notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editor's Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/About/pandoc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandoc markdown to html
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_18" id="__nav_3_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MVP Forth
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_18">
+            <span class="md-nav__icon md-icon"></span>
+            MVP Forth
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moving_Forth/MVP-Forth/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MVP-Forth for the Apple II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SDumont
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            SDumont
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDumont/environment-setup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SDumont environment setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDumont/singularity-containers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Singularity example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assembly
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Language
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notebooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/notebooks/assembly.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    x86_64 Assembly Language on *nix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/notebooks/small-assembly.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly small executable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/archive/2025.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/archive/2024.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/archive/2023.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/ann.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/classic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/hpc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/inpe.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    INPE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/internals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/pinn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PINN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/publication.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/tools.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/virtualization.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Books
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Books
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Autodoc
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Autodoc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books/autodoc/autodoc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autodoc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bcomp
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bcomp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books/bcomp/bcomp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building a Compiler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes on C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notebooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/notebooks/SoYouThinkYouKnowC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Excerpts that are difficult to read in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cluster
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster/cluster.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster/pythonmpi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python + MPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Executables
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Executables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executables/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes on executables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Clang
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Clang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executables/clang/clang-aarch64.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clang AArch64
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Flang
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Flang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executables/flang/flang-aarch64.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flang AArch64
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executables/flang/install-flang-aarch64.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install Flang on aarch64
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Gcc
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_4">
+            <span class="md-nav__icon md-icon"></span>
+            Gcc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executables/gcc/gcc_amd64.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding executables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executables/gcc/gcc_arm32.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding executables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fortran
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Fortran
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes on Fortran
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notebooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/csv.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSV example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/flang-aarch64.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flang AArch64
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/fortran-assembly.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fortran and assembly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/implicit.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    implicit none
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/iso_fortran_env%20.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iso_fortran_env intrinsic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/pointerassignment.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pointer assignment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/small-executable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fortran small executable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortran/notebooks/snippets.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snippets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning/courses.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List of courses I took at INPE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Papi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Papi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My personal notes on PAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    My personal notes on PAPI and hardware
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="papi.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    My personal notes on PAPI and hardware
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#show-only-avail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show only Avail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes on Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cheatsheet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/cheatsheet/folhaconsulta.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python - Folha de Consulta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notebooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/notebooks/variables.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vintage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            Vintage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vintage/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vintage computer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vintage/hp41.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HP-41
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#show-only-avail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show only Avail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="my-personal-notes-on-papi-and-hardware">My personal notes on PAPI and hardware</h1>
+<p>http://icl.cs.utk.edu/papi/</p>
+<pre><code class="language-python">! hostnamectl
+</code></pre>
+<pre><code>   Static hostname: sdumont18
+         Icon name: computer-server
+           Chassis: server
+        Machine ID: b2e8ad25684d44b68de42a969adb33bb
+           Boot ID: db5503ea9fda467baaa65b75646e5891
+  Operating System: Red Hat Enterprise Linux Server 7.7 (Maipo)
+       CPE OS Name: cpe:/o:redhat:enterprise_linux:7.7:GA:server
+            Kernel: Linux 3.10.0-957.27.2.el7.x86_64
+      Architecture: x86-64
+</code></pre>
+<pre><code class="language-python">! lspci | grep NVIDIA
+</code></pre>
+<pre><code>3b:00.0 3D controller: NVIDIA Corporation GV100GL [Tesla V100 PCIe 32GB] (rev a1)
+5e:00.0 3D controller: NVIDIA Corporation GV100GL [Tesla V100 PCIe 32GB] (rev a1)
+86:00.0 3D controller: NVIDIA Corporation GV100GL [Tesla V100 PCIe 32GB] (rev a1)
+af:00.0 3D controller: NVIDIA Corporation GV100GL [Tesla V100 PCIe 32GB] (rev a1)
+</code></pre>
+<pre><code class="language-python">! lscpu | egrep 'Model name|Socket|Thread|NUMA|CPU\(s\)'
+</code></pre>
+<pre><code>CPU(s):                88
+On-line CPU(s) list:   0-87
+Thread(s) per core:    2
+Socket(s):             2
+NUMA node(s):          2
+Model name:            Intel(R) Xeon(R) Gold 6152 CPU @ 2.10GHz
+NUMA node0 CPU(s):     0-21,44-65
+NUMA node1 CPU(s):     22-43,66-87
+</code></pre>
+<pre><code class="language-python">! echo &quot;CPU threads: $(grep -c processor /proc/cpuinfo)&quot;
+</code></pre>
+<pre><code>CPU threads: 88
+</code></pre>
+<pre><code class="language-python">! nproc --all
+</code></pre>
+<pre><code>88
+</code></pre>
+<pre><code class="language-python">! cat /proc/meminfo
+</code></pre>
+<pre><code>MemTotal:       791009752 kB
+MemFree:        705361836 kB
+MemAvailable:   773516612 kB
+Buffers:          399644 kB
+Cached:         68407188 kB
+SwapCached:            0 kB
+Active:         19929236 kB
+Inactive:       49909108 kB
+Active(anon):    1646308 kB
+Inactive(anon):   243172 kB
+Active(file):   18282928 kB
+Inactive(file): 49665936 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                24 kB
+Writeback:             0 kB
+AnonPages:       1031572 kB
+Mapped:           221036 kB
+Shmem:            857964 kB
+Slab:            8127912 kB
+SReclaimable:    2029056 kB
+SUnreclaim:      6098856 kB
+KernelStack:       29440 kB
+PageTables:        37780 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    395504876 kB
+Committed_AS:    5073604 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:     2426432 kB
+VmallocChunk:   33954576380 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    339968 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:    38993104 kB
+DirectMap2M:    619157504 kB
+DirectMap1G:    147849216 kB
+</code></pre>
+<pre><code class="language-python">! lsblk
+</code></pre>
+<pre><code>lsblk: /scratch/app/anaconda3/2020.11/lib/libuuid.so.1: no version information available (required by /usr/lib64/libblkid.so.1)
+NAME    MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda       8:0    0 894.3G  0 disk  
+├─sda1    8:1    0     2G  0 part  
+│ └─md0   9:0    0     2G  0 raid1 /boot/efi
+├─sda2    8:2    0     2G  0 part  
+│ └─md1   9:1    0     2G  0 raid1 /boot
+└─sda3    8:3    0 890.3G  0 part  
+  └─md2   9:2    0 890.1G  0 raid1 /
+sdb       8:16   0 894.3G  0 disk  
+├─sdb1    8:17   0     2G  0 part  
+│ └─md0   9:0    0     2G  0 raid1 /boot/efi
+├─sdb2    8:18   0     2G  0 part  
+│ └─md1   9:1    0     2G  0 raid1 /boot
+└─sdb3    8:19   0 890.3G  0 part  
+  └─md2   9:2    0 890.1G  0 raid1 /
+</code></pre>
+<pre><code class="language-python">! module avail papi
+</code></pre>
+<pre><code>------------------------ /usr/share/Modules/modulefiles ------------------------
+papi/5.5.1.0       papi-devel/5.5.1.0
+</code></pre>
+<pre><code class="language-bash">%%bash
+module load papi papi-devel
+module display papi papi-devel
+</code></pre>
+<pre><code>-------------------------------------------------------------------
+/usr/share/Modules/modulefiles/papi/5.5.1.0:
+
+module-whatis    loads the papi-5.5.1.0 environment 
+prepend-path     PATH /opt/bullxde/perftools/papi/5.5.1.0/bin 
+append-path  MANPATH /opt/bullxde/perftools/papi/5.5.1.0/man: 
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+/usr/share/Modules/modulefiles/papi-devel/5.5.1.0:
+
+module-whatis    loads the papi-devel-5.5.1.0 environment 
+append-path  MANPATH /opt/bullxde/perftools/papi/5.5.1.0/man: 
+prepend-path     CPATH /opt/bullxde/perftools/papi/5.5.1.0/include 
+prepend-path     LIBRARY_PATH /opt/bullxde/perftools/papi/5.5.1.0/lib64 
+prepend-path     LD_LIBRARY_PATH /opt/bullxde/perftools/papi/5.5.1.0/lib64 
+prepend-path     CPATH /opt/bullxde/perftools/papi/5.5.1.0/include/perfmon 
+-------------------------------------------------------------------
+</code></pre>
+<pre><code class="language-bash">%%bash
+module load papi papi-devel
+papi_avail
+</code></pre>
+<pre><code>Available PAPI preset and user defined events plus hardware information.
+--------------------------------------------------------------------------------
+PAPI Version             : 5.5.1.0
+Vendor string and code   : GenuineIntel (1)
+Model string and code    : Intel(R) Xeon(R) Gold 6152 CPU @ 2.10GHz (85)
+CPU Revision             : 4.000000
+CPUID Info               : Family: 6  Model: 85  Stepping: 4
+CPU Max Megahertz        : 2101
+CPU Min Megahertz        : 1000
+Hdw Threads per core     : 2
+Cores per Socket         : 22
+Sockets                  : 2
+NUMA Nodes               : 2
+CPUs per Node            : 44
+Total CPUs               : 88
+Running in a VM          : no
+Number Hardware Counters : 11
+Max Multiplex Counters   : 384
+--------------------------------------------------------------------------------
+
+================================================================================
+  PAPI Preset Events
+================================================================================
+    Name        Code    Avail Deriv Description (Note)
+PAPI_L1_DCM  0x80000000  Yes   No   Level 1 data cache misses
+PAPI_L1_ICM  0x80000001  Yes   No   Level 1 instruction cache misses
+PAPI_L2_DCM  0x80000002  Yes   Yes  Level 2 data cache misses
+PAPI_L2_ICM  0x80000003  Yes   No   Level 2 instruction cache misses
+PAPI_L3_DCM  0x80000004  No    No   Level 3 data cache misses
+PAPI_L3_ICM  0x80000005  No    No   Level 3 instruction cache misses
+PAPI_L1_TCM  0x80000006  Yes   Yes  Level 1 cache misses
+PAPI_L2_TCM  0x80000007  Yes   No   Level 2 cache misses
+PAPI_L3_TCM  0x80000008  Yes   No   Level 3 cache misses
+PAPI_CA_SNP  0x80000009  Yes   No   Requests for a snoop
+PAPI_CA_SHR  0x8000000a  Yes   No   Requests for exclusive access to shared cache line
+PAPI_CA_CLN  0x8000000b  Yes   No   Requests for exclusive access to clean cache line
+PAPI_CA_INV  0x8000000c  No    No   Requests for cache line invalidation
+PAPI_CA_ITV  0x8000000d  Yes   No   Requests for cache line intervention
+PAPI_L3_LDM  0x8000000e  Yes   No   Level 3 load misses
+PAPI_L3_STM  0x8000000f  No    No   Level 3 store misses
+PAPI_BRU_IDL 0x80000010  No    No   Cycles branch units are idle
+PAPI_FXU_IDL 0x80000011  No    No   Cycles integer units are idle
+PAPI_FPU_IDL 0x80000012  No    No   Cycles floating point units are idle
+PAPI_LSU_IDL 0x80000013  No    No   Cycles load/store units are idle
+PAPI_TLB_DM  0x80000014  Yes   Yes  Data translation lookaside buffer misses
+PAPI_TLB_IM  0x80000015  Yes   No   Instruction translation lookaside buffer misses
+PAPI_TLB_TL  0x80000016  No    No   Total translation lookaside buffer misses
+PAPI_L1_LDM  0x80000017  Yes   No   Level 1 load misses
+PAPI_L1_STM  0x80000018  Yes   No   Level 1 store misses
+PAPI_L2_LDM  0x80000019  Yes   No   Level 2 load misses
+PAPI_L2_STM  0x8000001a  Yes   No   Level 2 store misses
+PAPI_BTAC_M  0x8000001b  No    No   Branch target address cache misses
+PAPI_PRF_DM  0x8000001c  Yes   No   Data prefetch cache misses
+PAPI_L3_DCH  0x8000001d  No    No   Level 3 data cache hits
+PAPI_TLB_SD  0x8000001e  No    No   Translation lookaside buffer shootdowns
+PAPI_CSR_FAL 0x8000001f  No    No   Failed store conditional instructions
+PAPI_CSR_SUC 0x80000020  No    No   Successful store conditional instructions
+PAPI_CSR_TOT 0x80000021  No    No   Total store conditional instructions
+PAPI_MEM_SCY 0x80000022  No    No   Cycles Stalled Waiting for memory accesses
+PAPI_MEM_RCY 0x80000023  No    No   Cycles Stalled Waiting for memory Reads
+PAPI_MEM_WCY 0x80000024  Yes   No   Cycles Stalled Waiting for memory writes
+PAPI_STL_ICY 0x80000025  Yes   No   Cycles with no instruction issue
+PAPI_FUL_ICY 0x80000026  Yes   Yes  Cycles with maximum instruction issue
+PAPI_STL_CCY 0x80000027  Yes   No   Cycles with no instructions completed
+PAPI_FUL_CCY 0x80000028  Yes   No   Cycles with maximum instructions completed
+PAPI_HW_INT  0x80000029  No    No   Hardware interrupts
+PAPI_BR_UCN  0x8000002a  Yes   Yes  Unconditional branch instructions
+PAPI_BR_CN   0x8000002b  Yes   No   Conditional branch instructions
+PAPI_BR_TKN  0x8000002c  Yes   Yes  Conditional branch instructions taken
+PAPI_BR_NTK  0x8000002d  Yes   No   Conditional branch instructions not taken
+PAPI_BR_MSP  0x8000002e  Yes   No   Conditional branch instructions mispredicted
+PAPI_BR_PRC  0x8000002f  Yes   Yes  Conditional branch instructions correctly predicted
+PAPI_FMA_INS 0x80000030  No    No   FMA instructions completed
+PAPI_TOT_IIS 0x80000031  No    No   Instructions issued
+PAPI_TOT_INS 0x80000032  Yes   No   Instructions completed
+PAPI_INT_INS 0x80000033  No    No   Integer instructions
+PAPI_FP_INS  0x80000034  No    No   Floating point instructions
+PAPI_LD_INS  0x80000035  Yes   No   Load instructions
+PAPI_SR_INS  0x80000036  Yes   No   Store instructions
+PAPI_BR_INS  0x80000037  Yes   No   Branch instructions
+PAPI_VEC_INS 0x80000038  No    No   Vector/SIMD instructions (could include integer)
+PAPI_RES_STL 0x80000039  Yes   No   Cycles stalled on any resource
+PAPI_FP_STAL 0x8000003a  No    No   Cycles the FP unit(s) are stalled
+PAPI_TOT_CYC 0x8000003b  Yes   No   Total cycles
+PAPI_LST_INS 0x8000003c  Yes   Yes  Load/store instructions completed
+PAPI_SYC_INS 0x8000003d  No    No   Synchronization instructions completed
+PAPI_L1_DCH  0x8000003e  No    No   Level 1 data cache hits
+PAPI_L2_DCH  0x8000003f  No    No   Level 2 data cache hits
+PAPI_L1_DCA  0x80000040  No    No   Level 1 data cache accesses
+PAPI_L2_DCA  0x80000041  Yes   No   Level 2 data cache accesses
+PAPI_L3_DCA  0x80000042  Yes   Yes  Level 3 data cache accesses
+PAPI_L1_DCR  0x80000043  No    No   Level 1 data cache reads
+PAPI_L2_DCR  0x80000044  Yes   No   Level 2 data cache reads
+PAPI_L3_DCR  0x80000045  Yes   No   Level 3 data cache reads
+PAPI_L1_DCW  0x80000046  No    No   Level 1 data cache writes
+PAPI_L2_DCW  0x80000047  Yes   Yes  Level 2 data cache writes
+PAPI_L3_DCW  0x80000048  Yes   No   Level 3 data cache writes
+PAPI_L1_ICH  0x80000049  No    No   Level 1 instruction cache hits
+PAPI_L2_ICH  0x8000004a  Yes   No   Level 2 instruction cache hits
+PAPI_L3_ICH  0x8000004b  No    No   Level 3 instruction cache hits
+PAPI_L1_ICA  0x8000004c  No    No   Level 1 instruction cache accesses
+PAPI_L2_ICA  0x8000004d  Yes   No   Level 2 instruction cache accesses
+PAPI_L3_ICA  0x8000004e  Yes   No   Level 3 instruction cache accesses
+PAPI_L1_ICR  0x8000004f  No    No   Level 1 instruction cache reads
+PAPI_L2_ICR  0x80000050  Yes   No   Level 2 instruction cache reads
+PAPI_L3_ICR  0x80000051  Yes   No   Level 3 instruction cache reads
+PAPI_L1_ICW  0x80000052  No    No   Level 1 instruction cache writes
+PAPI_L2_ICW  0x80000053  No    No   Level 2 instruction cache writes
+PAPI_L3_ICW  0x80000054  No    No   Level 3 instruction cache writes
+PAPI_L1_TCH  0x80000055  No    No   Level 1 total cache hits
+PAPI_L2_TCH  0x80000056  No    No   Level 2 total cache hits
+PAPI_L3_TCH  0x80000057  No    No   Level 3 total cache hits
+PAPI_L1_TCA  0x80000058  No    No   Level 1 total cache accesses
+PAPI_L2_TCA  0x80000059  Yes   Yes  Level 2 total cache accesses
+PAPI_L3_TCA  0x8000005a  Yes   No   Level 3 total cache accesses
+PAPI_L1_TCR  0x8000005b  No    No   Level 1 total cache reads
+PAPI_L2_TCR  0x8000005c  Yes   Yes  Level 2 total cache reads
+PAPI_L3_TCR  0x8000005d  Yes   Yes  Level 3 total cache reads
+PAPI_L1_TCW  0x8000005e  No    No   Level 1 total cache writes
+PAPI_L2_TCW  0x8000005f  Yes   Yes  Level 2 total cache writes
+PAPI_L3_TCW  0x80000060  Yes   No   Level 3 total cache writes
+PAPI_FML_INS 0x80000061  No    No   Floating point multiply instructions
+PAPI_FAD_INS 0x80000062  No    No   Floating point add instructions
+PAPI_FDV_INS 0x80000063  No    No   Floating point divide instructions
+PAPI_FSQ_INS 0x80000064  No    No   Floating point square root instructions
+PAPI_FNV_INS 0x80000065  No    No   Floating point inverse instructions
+PAPI_FP_OPS  0x80000066  No    No   Floating point operations
+PAPI_SP_OPS  0x80000067  Yes   Yes  Floating point operations; optimized to count scaled single precision vector operations
+PAPI_DP_OPS  0x80000068  Yes   Yes  Floating point operations; optimized to count scaled double precision vector operations
+PAPI_VEC_SP  0x80000069  Yes   Yes  Single precision vector/SIMD instructions
+PAPI_VEC_DP  0x8000006a  Yes   Yes  Double precision vector/SIMD instructions
+PAPI_REF_CYC 0x8000006b  Yes   No   Reference clock cycles
+--------------------------------------------------------------------------------
+Of 108 possible events, 59 are available, of which 18 are derived.
+
+avail.c                                     PASSED
+</code></pre>
+<h4 id="show-only-avail">Show only Avail</h4>
+<pre><code class="language-bash">%%bash
+module load papi papi-devel
+papi_avail | egrep 'Deriv|Yes'
+</code></pre>
+<pre><code>    Name        Code    Avail Deriv Description (Note)
+PAPI_L1_DCM  0x80000000  Yes   No   Level 1 data cache misses
+PAPI_L1_ICM  0x80000001  Yes   No   Level 1 instruction cache misses
+PAPI_L2_DCM  0x80000002  Yes   Yes  Level 2 data cache misses
+PAPI_L2_ICM  0x80000003  Yes   No   Level 2 instruction cache misses
+PAPI_L1_TCM  0x80000006  Yes   Yes  Level 1 cache misses
+PAPI_L2_TCM  0x80000007  Yes   No   Level 2 cache misses
+PAPI_L3_TCM  0x80000008  Yes   No   Level 3 cache misses
+PAPI_CA_SNP  0x80000009  Yes   No   Requests for a snoop
+PAPI_CA_SHR  0x8000000a  Yes   No   Requests for exclusive access to shared cache line
+PAPI_CA_CLN  0x8000000b  Yes   No   Requests for exclusive access to clean cache line
+PAPI_CA_ITV  0x8000000d  Yes   No   Requests for cache line intervention
+PAPI_L3_LDM  0x8000000e  Yes   No   Level 3 load misses
+PAPI_TLB_DM  0x80000014  Yes   Yes  Data translation lookaside buffer misses
+PAPI_TLB_IM  0x80000015  Yes   No   Instruction translation lookaside buffer misses
+PAPI_L1_LDM  0x80000017  Yes   No   Level 1 load misses
+PAPI_L1_STM  0x80000018  Yes   No   Level 1 store misses
+PAPI_L2_LDM  0x80000019  Yes   No   Level 2 load misses
+PAPI_L2_STM  0x8000001a  Yes   No   Level 2 store misses
+PAPI_PRF_DM  0x8000001c  Yes   No   Data prefetch cache misses
+PAPI_MEM_WCY 0x80000024  Yes   No   Cycles Stalled Waiting for memory writes
+PAPI_STL_ICY 0x80000025  Yes   No   Cycles with no instruction issue
+PAPI_FUL_ICY 0x80000026  Yes   Yes  Cycles with maximum instruction issue
+PAPI_STL_CCY 0x80000027  Yes   No   Cycles with no instructions completed
+PAPI_FUL_CCY 0x80000028  Yes   No   Cycles with maximum instructions completed
+PAPI_BR_UCN  0x8000002a  Yes   Yes  Unconditional branch instructions
+PAPI_BR_CN   0x8000002b  Yes   No   Conditional branch instructions
+PAPI_BR_TKN  0x8000002c  Yes   Yes  Conditional branch instructions taken
+PAPI_BR_NTK  0x8000002d  Yes   No   Conditional branch instructions not taken
+PAPI_BR_MSP  0x8000002e  Yes   No   Conditional branch instructions mispredicted
+PAPI_BR_PRC  0x8000002f  Yes   Yes  Conditional branch instructions correctly predicted
+PAPI_TOT_INS 0x80000032  Yes   No   Instructions completed
+PAPI_LD_INS  0x80000035  Yes   No   Load instructions
+PAPI_SR_INS  0x80000036  Yes   No   Store instructions
+PAPI_BR_INS  0x80000037  Yes   No   Branch instructions
+PAPI_RES_STL 0x80000039  Yes   No   Cycles stalled on any resource
+PAPI_TOT_CYC 0x8000003b  Yes   No   Total cycles
+PAPI_LST_INS 0x8000003c  Yes   Yes  Load/store instructions completed
+PAPI_L2_DCA  0x80000041  Yes   No   Level 2 data cache accesses
+PAPI_L3_DCA  0x80000042  Yes   Yes  Level 3 data cache accesses
+PAPI_L2_DCR  0x80000044  Yes   No   Level 2 data cache reads
+PAPI_L3_DCR  0x80000045  Yes   No   Level 3 data cache reads
+PAPI_L2_DCW  0x80000047  Yes   Yes  Level 2 data cache writes
+PAPI_L3_DCW  0x80000048  Yes   No   Level 3 data cache writes
+PAPI_L2_ICH  0x8000004a  Yes   No   Level 2 instruction cache hits
+PAPI_L2_ICA  0x8000004d  Yes   No   Level 2 instruction cache accesses
+PAPI_L3_ICA  0x8000004e  Yes   No   Level 3 instruction cache accesses
+PAPI_L2_ICR  0x80000050  Yes   No   Level 2 instruction cache reads
+PAPI_L3_ICR  0x80000051  Yes   No   Level 3 instruction cache reads
+PAPI_L2_TCA  0x80000059  Yes   Yes  Level 2 total cache accesses
+PAPI_L3_TCA  0x8000005a  Yes   No   Level 3 total cache accesses
+PAPI_L2_TCR  0x8000005c  Yes   Yes  Level 2 total cache reads
+PAPI_L3_TCR  0x8000005d  Yes   Yes  Level 3 total cache reads
+PAPI_L2_TCW  0x8000005f  Yes   Yes  Level 2 total cache writes
+PAPI_L3_TCW  0x80000060  Yes   No   Level 3 total cache writes
+PAPI_SP_OPS  0x80000067  Yes   Yes  Floating point operations; optimized to count scaled single precision vector operations
+PAPI_DP_OPS  0x80000068  Yes   Yes  Floating point operations; optimized to count scaled double precision vector operations
+PAPI_VEC_SP  0x80000069  Yes   Yes  Single precision vector/SIMD instructions
+PAPI_VEC_DP  0x8000006a  Yes   Yes  Double precision vector/SIMD instructions
+PAPI_REF_CYC 0x8000006b  Yes   No   Reference clock cycles
+</code></pre>
+<pre><code class="language-bash">%%bash
+module load papi papi-devel
+papi_component_avail
+</code></pre>
+<pre><code>Available components and hardware information.
+--------------------------------------------------------------------------------
+PAPI Version             : 5.5.1.0
+Vendor string and code   : GenuineIntel (1)
+Model string and code    : Intel(R) Xeon(R) Gold 6152 CPU @ 2.10GHz (85)
+CPU Revision             : 4.000000
+CPUID Info               : Family: 6  Model: 85  Stepping: 4
+CPU Max Megahertz        : 2101
+CPU Min Megahertz        : 1000
+Hdw Threads per core     : 2
+Cores per Socket         : 22
+Sockets                  : 2
+NUMA Nodes               : 2
+CPUs per Node            : 44
+Total CPUs               : 88
+Running in a VM          : no
+Number Hardware Counters : 11
+Max Multiplex Counters   : 384
+--------------------------------------------------------------------------------
+
+Compiled-in components:
+Name:   perf_event              Linux perf_event CPU counters
+Name:   perf_event_uncore       Linux perf_event CPU uncore and northbridge
+   \-&gt; Disabled: No uncore PMUs or events found
+Name:   rapl                    Linux RAPL energy measurements
+   \-&gt; Disabled: CPU model not supported
+Name:   net                     Linux network driver statistics
+Name:   lustre                  Lustre filesystem statistics
+   \-&gt; Disabled: No lustre filesystems found
+Name:   infiniband              Linux Infiniband statistics using the sysfs interface
+
+Active components:
+Name:   perf_event              Linux perf_event CPU counters
+                                Native: 162, Preset: 59, Counters: 11
+                                PMU's supported: ix86arch, perf, perf_raw, skl
+
+Name:   net                     Linux network driver statistics
+                                Native: 128, Preset: 0, Counters: 320
+                                PMU's supported:
+
+Name:   infiniband              Linux Infiniband statistics using the sysfs interface
+                                Native: 21, Preset: 0, Counters: 21
+                                PMU's supported:
+
+
+--------------------------------------------------------------------------------
+component.c                             PASSED
+</code></pre>
+<pre><code class="language-bash">%%bash
+gfortran --version
+</code></pre>
+<pre><code>GNU Fortran (GCC) 4.8.5 20150623 (Red Hat 4.8.5-39)
+Copyright (C) 2015 Free Software Foundation, Inc.
+
+GNU Fortran comes with NO WARRANTY, to the extent permitted by law.
+You may redistribute copies of GNU Fortran
+under the terms of the GNU General Public License.
+For more information about these matters, see the file named COPYING
+</code></pre>
+<pre><code class="language-bash">%%bash
+module load papi papi-devel
+echo $CPATH
+echo $LIBRARY_PATH
+</code></pre>
+<pre><code>/opt/bullxde/perftools/papi/5.5.1.0/include/perfmon:/opt/bullxde/perftools/papi/5.5.1.0/include
+/opt/bullxde/perftools/papi/5.5.1.0/lib64
+</code></pre>
+<pre><code class="language-python">! ls /opt/bullxde/perftools/papi/5.5.1.0/include
+</code></pre>
+<pre><code>f77papi.h  f90papi.h  fpapi.h  papi.h  papiStdEventDefs.h
+</code></pre>
+<pre><code class="language-python">! ls /opt/bullxde/perftools/papi/5.5.1.0/lib64
+</code></pre>
+<pre><code>libpapi.a   libpapi.so.5      libpapi.so.5.5.1.0  libpfm.so    libpfm.so.4.8.0
+libpapi.so  libpapi.so.5.5.1  libpfm.a        libpfm.so.4  pkgconfig
+</code></pre>
+<h4 id="test">Test</h4>
+<p>Testing one small code only to see if works</p>
+<pre><code class="language-python">%%writefile test01.f90
+!-----------------------------------------------------------------------
+program test01
+    implicit none
+    include 'f90papi.h'
+
+    integer, parameter :: N = 512
+    double precision, dimension(N, N) :: a, b
+    double precision :: t1, t2, rate
+    integer :: i, j
+
+    integer, parameter :: max_event = 3
+    integer, dimension(max_event) :: event
+    integer(kind=8), dimension(max_event) :: values
+    integer :: retval
+
+    event(1) = PAPI_LD_INS
+    event(2) = PAPI_SR_INS
+    !event(x) = PAPI_L1_TCM
+    !event(x) = PAPI_L2_TCM
+    event(3) = PAPI_L3_TCM
+
+    call init01(a, b, N)            ! init matrix cels
+
+    call PAPIF_start_counters (event, max_event, retval)
+    if (retval /= PAPI_OK) then
+        call PAPIF_perror('PAPIF_start_counters')
+        stop
+    endif
+
+    call cpu_time(t1)               ! CPU elapsed time in seconds
+
+    do j = 1, N                     ! transpose the matrix
+        do i = 1, N
+            b(i, j) = a(j, i)
+        enddo
+    enddo
+
+    call cpu_time(t2)               ! CPU elapsed time in seconds
+
+    ! Read out PAPI counters
+    call PAPIF_read_counters(values, max_event, retval)
+    if (retval /= PAPI_OK) then
+        call PAPIF_perror('PAPIF_read_counters')
+        stop
+    endif
+
+    call check01(a, b, N)           ! check the transpose
+
+    ! Print Timings
+    print*, 'PAPI_LD_INS', values(1)
+    print*, 'PAPI_SR_INS', values(2)
+    !print*, 'PAPI_L1_TCM', values(x)
+    !print*, 'PAPI_L2_TCM', values(x)
+    print*, 'PAPI_L3_TCM', values(3)
+    rate = 2 * N * N / (1024 * 1024 * (t2 - t1))
+    print '(a, i0, a, f10.6, a, f6.1, a)',  &amp;
+          &quot;N=&quot;, N, &quot;,  T=&quot;, t2 - t1, &quot; s,  Rate=&quot;, rate, &quot; MB/s&quot;
+
+contains
+
+    subroutine init01(a, b, N)
+        implicit none
+        integer, intent(in) :: N
+        double precision, intent(inout) :: a(N, N), b(N, N)
+        integer :: i, j
+        do i = 1, N
+            do j = 1, N
+                a(i, j) = 1.0
+                b(i, j) = 0.0
+            enddo
+        enddo
+    end subroutine
+
+    subroutine check01(a, b, N)
+        implicit none
+        integer, intent(in) :: N
+        double precision, intent(in) :: a(N, N), b(N, N)
+        integer :: i, j
+        do i = 1, N
+            do j = 1, N
+                if ( a(i, j) /= b(i, j) ) then
+                    print *, &quot;Error: &quot;, i, j
+                endif
+            enddo
+        enddo
+    end subroutine
+
+end program
+
+</code></pre>
+<pre><code>Overwriting test01.f90
+</code></pre>
+<pre><code class="language-bash">%%bash
+module load papi papi-devel
+gfortran -lpapi -o test01 test01.f90 \
+         -I /opt/bullxde/perftools/papi/5.5.1.0/include
+</code></pre>
+<pre><code class="language-bash">%%bash
+module load papi papi-devel
+./test01
+</code></pre>
+<pre><code> PAPI_LD_INS              1838017
+ PAPI_SR_INS               525961
+ PAPI_L3_TCM                 1379
+N=512,  T=  0.001251 s,  Rate= 399.7 MB/s
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY 4.0 License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../assets/katex.js"></script>
+      
+        <script src="../assets/katex/katex.min.js"></script>
+      
+        <script src="../assets/katex/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

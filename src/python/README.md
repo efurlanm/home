@@ -5,8 +5,6 @@ This page contains my personal notes on Python-related topics that I find intere
 
 ## Files & directories
 
-* Main directory: <https://github.com/efurlanm/home/tree/main/python>
-
 * **cheatsheet/** -  Python Cheat Sheet, by Valdemar W. Setzer. The directory contains my attempt to help build the cheat sheet by describing some functions and modules that are not yet in the sheet. It is a work in progress and subject to constant change. Setzer's cheatsheet web page: <https://www.ime.usp.br/~vwsetzer/python-opers-funcoes.html>. (in Portuguese)
 
 * [variables.ipynb](notebooks/variables.ipynb) - my personal notes on how Python variables work.
@@ -23,4 +21,4 @@ This page contains my personal notes on Python-related topics that I find intere
 * Immutable variables: int, float, complex, str, tuple, frozenset, and bytes.
 * Mutable variables: list, dict, set, bytearray, object (class instance).
 
-<br><sub>Last edited: 2025-01-17 13:14:20</sub>
+<br><sub>Last edited: 2025-03-08 10:21:38</sub>

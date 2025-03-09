@@ -20,19 +20,19 @@ The website is generated from plain text formatting files called [Markdown](http
 
 (unsorted)
 
-* [HPC](https://github.com/efurlanm/hpc) - repository containing my personal notes on High-Performance Computing (HPC). Efficient language design and implementation are crucial for HPC because they directly impact the performance, scalability, and usability of HPC applications. Languages designed specifically for HPC, such as domain-specific languages (DSLs), can optimize parallelism, manage complex computations, and provide abstractions that simplify the development of high-performance code. Additionally, well-designed compilers and interpreters for these languages can further enhance performance by optimizing code execution on HPC systems.
-* [Cluster/](https://github.com/efurlanm/home/tree/main/src/cluster/) - notes on my personal home cluster.
-* [PAPI/](https://github.com/efurlanm/home/tree/main/src/tools/papi/) - portable performance counter library and related infos.
-* [SDumont/](https://github.com/efurlanm/home/tree/main/src/sdumont/) - my notes about the [Santos Dumont supercomputer](https://sdumont.lncc.br/machine.php).
-* [IDRIS/](https://github.com/efurlanm/home/tree/main/src/IDRIS/) - directory containing the [MPI course](http://www.idris.fr/formations/mpi/), with many examples in F90, from the Institut du Développement et des Ressources en Informatique Scientifique (IDRIS).
-* [Articles/](https://github.com/efurlanm/home/tree/main/src/articles/) - interesting articles that I collect over time.
+* [Cluster/](cluster/README.md) - notes on my personal home cluster.
+* [PAPI/](papi/README.md) - portable performance counter library and related infos.
+* [SDumont/](https://github.com/efurlanm/home/tree/main/src/SDumont) - my notes about the [Santos Dumont supercomputer](https://sdumont.lncc.br/machine.php).
+* [IDRIS/](https://github.com/efurlanm/home/tree/main/src/IDRIS) - directory containing the [MPI course](http://www.idris.fr/formations/mpi/), with many examples in F90, from the Institut du Développement et des Ressources en Informatique Scientifique (IDRIS).
 * [Python](python/README.md) - my personal notes on Python-related topics that I find interesting.
-* [Moving Forth](moving_forth/README.md) - my personal notes on Brad Rodriguez's Moving Forth.
+* [Moving Forth](Moving_Forth/README.md) - my personal notes on Brad Rodriguez's Moving Forth.
 * [Fortran](fortran/README.md) - my personal notes about Fortran, a high -level programming language that is historically linked to HPC due to its efficient handling of numerical and scientific calculations.
 * [C](c/README.md) - directory with my personal notes on the C programming language, which has efficiency and the ability to directly manipulate hardware resources, allowing optimized performance for compute-intensive tasks. 
 * [Assembly](assembly/README.md) - my personal notes on the Assembly programming language.
-* [Vintage](vintage/vintage.md) - vintage computer internals.
+* [Vintage](vintage/README.md) - vintage computer internals.
 * [Courses](learning/courses.md) - list of courses I took at INPE.
+
+In addition to these, there are other directories and files that are not listed here, and to access them, navigate directly to the repository.
 
 
 ## F90 from University of Liverpool
@@ -83,4 +83,4 @@ Original archived files:
 My work follows the CC-BY-4.0 license. The works of other authors follow their licenses.
 
 
-<br><sub>Last edited: 2025-03-03 16:51:38</sub>
+<br><sub>Last edited: 2025-03-08 10:14:52</sub>

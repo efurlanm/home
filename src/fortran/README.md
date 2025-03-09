@@ -91,7 +91,7 @@ For debugging and optimization purposes it is important to know the "assembly" l
 - [Listing of open source and commercial compilers](https://fortran-lang.org/compilers/), by fortran-lang.org .
 - BCS Fortran Specialist Group. [Open forum for Fortran users](https://fortran.bcs.org/) .
 - WG5 ISO IEC [Fortran Standards](https://wg5-fortran.org/).
-- [US Fortran](https://j3-fortran.org>) Programming Language Standards Technical Committee .
+- [US Fortran](https://j3-fortran.org) Programming Language Standards Technical Committee .
 - [High Performance Fortran (HPF)](https://www.netlib.org/hpf/index.html). Extensions to F90 .
 - Tutorialspoint. [Learn Fortran](https://www.tutorialspoint.com/fortran/). Tutorial designed for beginners .
 - Tutorialspoint. [Online Fortran compiler](https://www.tutorialspoint.com/compile_fortran_online.php). Compile and Execute FORTRAN-95 Online (GNU Fortran, GCC) .
@@ -126,4 +126,4 @@ For debugging and optimization purposes it is important to know the "assembly" l
 - Blog: [Implicit None](https://web.archive.org/web/20160109190730/http://implicitnone.com/) - Ideas, suggestions, code hints & tips for Fortran enthusiasts.
 
 
-<br><sub>Last edited: 2025-01-20 15:13:12</sub>
+<br><sub>Last edited: 2025-03-08 10:20:41</sub>

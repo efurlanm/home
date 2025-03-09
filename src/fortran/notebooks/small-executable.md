@@ -2,7 +2,7 @@
 
 *Last edited: 2023-12-10*
 
-Some exercises to try to better understand the creation of executables by a compiler. There is also a [Notebook that uses the assembly language](https://efurlanm.github.io/ldi/assembly/small-assembly/).
+Some exercises to try to better understand the creation of executables by a compiler.
 
 
 ```python

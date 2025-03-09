@@ -1,3 +1,5 @@
+/* home */
+
 /* ### JUPYTER ### */
 .jupyter-wrapper .jp-RenderedText {
     --jp-code-font-size: .875em;
@@ -68,21 +70,26 @@
   margin-left: -2em;
 }
 
+.rst-content .section dl dt {
+    margin-bottom: 0.25rem;
+}
 
-/* Styles for lists WITHIN .md-typeset */
-/*.md-typeset ul li > ul {
-    margin-bottom: 0; /* Set bottom margin of ul to 0 */
-}*/
 
-/*.md-typeset ul li > * {
-    margin-top: 0;
-    margin-bottom: 0;
-}*/
+
+
+
+
+
+
+
+
+
+/* Styles for lists */
 
 .md-typeset ul li,
 .md-typeset ol li {
-    padding-top: 0rem;
-    padding-bottom: 0.5em;
+    padding-top: 0;
+    padding-bottom: 0;  /* 0.5em */
     margin-top: 0;
 }
 
@@ -114,6 +121,7 @@
 .md-typeset ol ol li > p,
 .md-typeset ul ol li > p,
 .md-typeset ol ul li > p {
+    margin-top: 0;
     margin-bottom: 0.25em;
 }
 
@@ -127,24 +135,39 @@
     margin-bottom: 0;
 }
 
+.md-typeset > ul > li {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.md-typeset > ul > li:not(:has(p)) {
+    margin-bottom: 0;
+}
+
+.rst-content .section ul li > ul {
+    margin-bottom: 0;
+}
+
+
+
+
 
 /*--- External links --------------------*/
 
 /* ::after creates a pseudo-element used to add cosmetic content.
  *   See: https://developer.mozilla.org/en-US/docs/Web/CSS/::after . */
 
-.md-typeset a[href*="//"]:after
-{
+.md-typeset a[href*="//"]:after {
     font-size: 0.75em;
     font-weight: 300;  /* light */
-    color: var(#121212);
+    /* color: var(#121212); */
     opacity: 0.5;
     content: "↗"; /* top right arrow: ↗ \2197 */
 }
 
-.md-typeset a[href*="//"]:hover:after
-{
-    color: var(#2749c9);
+.md-typeset a[href*="//"]:hover:after {
+    /* color: var(#2749c9); */
     opacity: 1;
 }
 

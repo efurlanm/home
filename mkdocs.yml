@@ -1,7 +1,6 @@
-# Last edited: 2025-01-14
 site_name: Home
-site_description: My random personal notes
 site_author: Eduardo Furlan
+site_description: My random personal notes
 site_url: https://efurlanm.github.io/home/
 copyright: CC BY 4.0 License
 repo_name: home
@@ -10,12 +9,12 @@ site_dir: docs
 docs_dir: src
 use_directory_urls: false
 theme:
+    font: false                 # no external fonts
     name: material
     # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
         primary: orange
         accent: orange
-    font: false                 # no external fonts
     features:
         - header.autohide
         - navigation.tracking   # address shows active anchor
@@ -38,7 +37,8 @@ markdown_extensions:
     - tables
     - pymdownx.arithmatex:
         generic: true           # used with katex
+not_in_nav: |
+    assets/
 exclude_docs: |
     .*
-    _*
-    assets/cheatsheet.md
+    *§*
