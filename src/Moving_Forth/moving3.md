@@ -612,5 +612,4 @@ In the next installment I'll discuss the merits of assemblers vs. metacompilers,
 
 *Author's note for web publication: the files formerly available on the GEnie online service are now available from the Forth Interest Group FTP server, `ftp://ftp.forth.org/pub/Forth`.*
 
-
 <br><sub>Last edited: 2024-04-20 21:31:03</sub>

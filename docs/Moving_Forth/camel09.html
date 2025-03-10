@@ -3855,25 +3855,6 @@ META ALSO FORTH TLATEST @ T, PREVIOUS TARGET    \ LATEST
 \ order to set the initial LATEST as shown above.  If this is
 \ not the last word, be sure to patch the LATEST value above.
 </code></pre>
-<p><br><sub>Last edited: 2022-02-04 22:25:31</sub>
-word</p>
-<p>ASM: HERE EQU IRET   RTI,  ;C
-HERE  0FFF0 ORG    \ 6809 hardware vectors
-  IRET ,  IRET ,  IRET ,  IRET ,    \ tbd, SWI3, SWI2, FIRQ
-  IRET ,  IRET ,  IRET ,  ENTRY ,   \ IRQ, SWI, NMI, RESET
-ORG</p>
-<p>\   6809 DTC: user area initialization           (c) 25apr95 bjr
-DECIMAL 18 CONSTANT #INIT   \ # bytes of user area init data</p>
-<p>CREATE UINIT  HEX
-   0 , 0 , 0A , 0 ,         \ reserved,&gt;IN,BASE,STATE
-   DP-INIT ,                \ DP
-   0 , 0 ,                  \ SOURCE init'd elsewhere
-META ALSO FORTH TLATEST @ T, PREVIOUS TARGET    \ LATEST
-   0 ,                      \ HP init'd elsewhere
-\ Note that UINIT must be the <em>last</em> word in the kernel, in
-\ order to set the initial LATEST as shown above.  If this is
-\ not the last word, be sure to patch the LATEST value above.
-```</p>
 <p><br><sub>Last edited: 2022-02-04 22:25:31</sub></p>
 
 

@@ -126,4 +126,5 @@ For debugging and optimization purposes it is important to know the "assembly" l
 - Blog: [Implicit None](https://web.archive.org/web/20160109190730/http://implicitnone.com/) - Ideas, suggestions, code hints & tips for Fortran enthusiasts.
 
 
+
 <br><sub>Last edited: 2025-03-08 10:20:41</sub>

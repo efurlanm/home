@@ -21,4 +21,5 @@ This page contains my personal notes on Python-related topics that I find intere
 * Immutable variables: int, float, complex, str, tuple, frozenset, and bytes.
 * Mutable variables: list, dict, set, bytearray, object (class instance).
 
+
 <br><sub>Last edited: 2025-03-08 10:21:38</sub>

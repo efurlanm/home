@@ -1011,41 +1011,4 @@ DOTS2:  DW EXIT
         DW TYPE,ABORT       ; ABORT never returns
 ```
 
-
-<br><sub>Last edited: 2022-02-04 22:24:12</sub>
-   DUP COUNT TYPE SPACE
-;       NFA>LFA @
-;   DUP 0= UNTIL
-;   DROP ;
-    head WORDS,5,WORDS,docolon
-        DW LATEST,FETCH
-WDS1:   DW DUP,COUNT,TYPE,SPACE,NFATOLFA,FETCH
-        DW DUP,ZEROEQUAL,qbranch,WDS1
-        DW DROP,EXIT
-
-;X .S      --           print stack contents
-;   SP@ S0 - IF
-;       SP@ S0 2 - DO I @ U. -2 +LOOP
-;   THEN ;
-    head DOTS,2,.S,docolon
-        DW SPFETCH,S0,MINUS,qbranch,DOTS2
-        DW SPFETCH,S0,LIT,2,MINUS,XDO
-DOTS1:  DW II,FETCH,UDOT,LIT,-2,XPLUSLOOP,DOTS1
-DOTS2:  DW EXIT
-
-;Z COLD     --      cold start Forth system
-;   UINIT U0 #INIT CMOVE      init user area
-;   80 COUNT INTERPRET       interpret CP/M cmd
-;   ." Z80 CamelForth etc."
-;   ABORT ;
-    head COLD,4,COLD,docolon
-        DW UINIT,U0,NINIT,CMOVE
-        DW LIT,80h,COUNT,INTERPRET
-        DW XSQUOTE
-        DB 35,'Z80 CamelForth v1.01  25 Jan 1995'
-        DB 0dh,0ah
-        DW TYPE,ABORT       ; ABORT never returns
-```
-
-
 <br><sub>Last edited: 2022-02-04 22:24:12</sub>

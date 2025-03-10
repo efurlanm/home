@@ -1029,39 +1029,4 @@ enddict EQU $       ; user's code starts here
         END
 ```
 
-
-<br><sub>Last edited: 2022-02-04 22:24:44</sub>
-    ; count
-        pop hl      ; addr2
-        pop de      ; addr1
-        ld a,b      ; test for count=0
-        or c
-        jr z,smatch     ; by definition, match!
-sloop:  ld a,(de)
-        inc de
-        cpi
-        jr nz,sdiff     ; char mismatch: exit
-        jp pe,sloop     ; count not exhausted
-smatch: ; count exhausted & no mismatch found
-        exx
-        ld bc,0         ; bc=0000  (s1=s2)
-        jr snext
-sdiff:  ; mismatch!  undo last 'cpi' increment
-        dec hl          ; point at mismatch char
-        cp (hl)         ; set cy if char1 < char2
-        sbc a,a         ; propagate cy thru A
-        exx
-        ld b,a          ; bc=FFFF if cy (s1<s2)
-        or 1            ; bc=0001 if ncy (s1>s2)
-        ld c,a
-snext:  next
-
-*INCLUDE camel80d.azm   ; CPU Dependencies
-*INCLUDE camel80h.azm   ; High Level words
-lastword EQU link   ; nfa of last word in dict.
-enddict EQU $       ; user's code starts here
-        END
-```
-
-
 <br><sub>Last edited: 2022-02-04 22:24:44</sub>

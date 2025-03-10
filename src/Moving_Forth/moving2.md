@@ -517,5 +517,4 @@ Subsequent articles will look at:
 
 *Author's note for web publication: the files formerly available on the GEnie online service are now available from the Forth Interest Group FTP server, `ftp://ftp.forth.org/pub/Forth`.*
 
-
 <br><sub>Last edited: 2024-12-01 14:44:05</sub>

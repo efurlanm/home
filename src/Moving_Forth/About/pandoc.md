@@ -17,5 +17,4 @@ Example of using pandoc to convert markdown to html:
 
 [EL01]: https://github.com/efurlanm/movingforth/tree/main/pandoc
 
-
 <br><sub>Last edited: 2023-08-14 14:25:37</sub>

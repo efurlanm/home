@@ -1,6 +1,6 @@
 # Editor's Notes
 
-- The github sources for this website are available at: <https://github.com/efurlanm/home/tree/main/src/Moving_Forth>
+- The github sources for this website are available at: <http://github.com/efurlanm/forth>
 - The source markdown documents were also edited using Mark Text (<http://github.com/marktext/>) which is a good offline markdown document reader and also exports to PDF or HTML formats
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) static site generator and theme was used to build the website
 - The tables were edited in Libreoffice Calc using a custom html template, then copied and pasted into the text
@@ -11,5 +11,4 @@
 - Instructions to obtain a local copy of this repository: [cloning-a-repository](http://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository/)
 
 
-
-<br><sub>Last edited: 2025-03-08 10:30:50</sub>
+<br><sub>Last edited: 2024-11-19 14:34:29</sub>
